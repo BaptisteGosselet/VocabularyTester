@@ -4,21 +4,36 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class IGQuiz extends JFrame {
-    class PauseThread extends Thread{
-        public void run() {
-            try {
-                Thread.sleep(1500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+
+    private void clickOnButton(int index) {
+        System.out.println(index);
+        for (JButton button : this.buttons) {
+            button.setEnabled(false);
+            button.setBackground(Color.GREEN);
+        }
+
+        new Timer(1500, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                resetButton();
+                ((Timer) e.getSource()).stop();
             }
-            //
+        }).start();
+    }
+    
+    private void resetButton() {
+        for (JButton button : this.buttons) {
+            button.setEnabled(true);
+            button.setBackground(null);
         }
     }
+
     
     JLabel letterLabel =new JLabel();
     JButton[] buttons = new JButton[4];
     private JButton newTestButton = new JButton("Nouveau Test");
-    private JLabel scoreLabel = new JLabel("00/20");
+    private JButton resetButton = new JButton("Recommencer");
+    private JLabel scoreLabel = new JLabel();
     
     ButtonGroup modeGroup;
     ButtonGroup formatGroup;
@@ -27,7 +42,7 @@ public class IGQuiz extends JFrame {
     
         //Frame Configuration
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(500, 400);
+        this.setSize(750, 600);
         this.setTitle("Vocabulary Tester");
         this.setResizable(false);
         this.setLocationRelativeTo(null);
@@ -36,32 +51,29 @@ public class IGQuiz extends JFrame {
                 
         // Label
         letterLabel.setText("Vocabulaire");
-        letterLabel.setBounds(100, 50, 300, 40);
+        letterLabel.setFont(new Font("MS Gothic", Font.BOLD, 56));
         letterLabel.setHorizontalAlignment(JLabel.CENTER);
         letterLabel.setVerticalAlignment(JLabel.CENTER);
-        letterLabel.setBorder(BorderFactory.createLineBorder(Color.black));
         c.add(letterLabel);
     
         // GridLayout
         JPanel buttonPanel = new JPanel();
-        buttonPanel.setBounds(100, 150, 300, 150);
         buttonPanel.setLayout(new GridLayout(2, 2, 10, 10));
         c.add(buttonPanel);
     
         // Boutons
         for (int i = 0; i < 4; i++) {
             buttons[i] = new JButton("Réponse " + (i + 1));
+            buttons[i].setFont(new Font("MS Mincho", Font.PLAIN, 18));
             buttonPanel.add(buttons[i]);
-            buttons[i].addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    System.out.println("Button '" + ((JButton)e.getSource()).getText() + "' was clicked");
-                }
-            });
         }
+
+        buttons[0].addActionListener(new ActionListener() {public void actionPerformed(ActionEvent e) {clickOnButton(0);}});
+        buttons[1].addActionListener(new ActionListener() {public void actionPerformed(ActionEvent e) {clickOnButton(1);}});
+        buttons[2].addActionListener(new ActionListener() {public void actionPerformed(ActionEvent e) {clickOnButton(2);}});
+        buttons[3].addActionListener(new ActionListener() {public void actionPerformed(ActionEvent e) {clickOnButton(3);}});
     
         // Bouton nouveau test
-        newTestButton.setBounds(10, 330, 150, 30);
         newTestButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -69,13 +81,26 @@ public class IGQuiz extends JFrame {
         }
         });
         c.add(newTestButton);
+
+        // Bouton reset test
+        resetButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println(((JButton) e.getSource()).getText());
+        }
+        });
+        c.add(resetButton);
     
         // Label score
-        scoreLabel.setBounds(350, 330, 100, 30);
         c.add(scoreLabel);
-    
-    
-    
+        
+        //Bounds
+        letterLabel.setBounds(150, 75, 450, 60);
+        buttonPanel.setBounds(150, 225, 450, 225);
+        newTestButton.setBounds(15, 495, 225, 45);
+        resetButton.setBounds(255, 495, 225, 45);
+        scoreLabel.setBounds(525, 495, 150, 45);
+
         this.setVisible(true);
     
     }
