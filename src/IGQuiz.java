@@ -131,7 +131,7 @@ public class IGQuiz extends JFrame {
             String filePath = selectedFile.getAbsolutePath();
             int number_of_words = qc.readFile(filePath);
 
-            String numberOfQuestions = JOptionPane.showInputDialog("Nombre de questions à générer : ");
+            String numberOfQuestions = JOptionPane.showInputDialog("Nombre de questions à générer : ", ""+number_of_words);
             int numberOfQuestionsInt = Integer.parseInt(numberOfQuestions);
     
             Object[] options = {"Recto / Verso", "Recto -> Verso", "Verso -> Recto"};
