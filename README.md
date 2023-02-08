@@ -39,5 +39,5 @@ No#Non
 Please#S'il vous plaît
 ```
 
-D'un côté nous trouvons les mots dans une langue A, et de l'autre leurs équivalents dans une langue B. Les mots sont séparés d'un **#** afin de permettre les espaces ou parenthèse.
+D'un côté nous trouvons les mots dans une langue A, et de l'autre leur équivalent dans une langue B. Les mots sont séparés d'un **#** afin de permettre les espaces ou parenthèse.
 
