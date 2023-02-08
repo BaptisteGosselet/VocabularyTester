@@ -2,9 +2,11 @@ public class QuizController {
 
     int cpt = 0;
     int nbQuestion;
+    int mode;
     
-    public QuizController(String filename, int nQuestion){
+    public QuizController(String filename, int nQuestion, int nMode){
         this.nbQuestion = nQuestion;
+        this.mode = nMode;
         lireQuestionnaire(filename);
     }
 

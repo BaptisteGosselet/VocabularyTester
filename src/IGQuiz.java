@@ -8,6 +8,8 @@ import java.io.File;
 
 public class IGQuiz extends JFrame {
     
+    QuizController qc;
+
     JLabel letterLabel =new JLabel();
     JButton[] buttons = new JButton[4];
     private JButton newTestButton = new JButton("Nouveau Test");
@@ -119,9 +121,11 @@ public class IGQuiz extends JFrame {
             String numberOfQuestions = JOptionPane.showInputDialog("Nombre de questions à générer : ");
             int numberOfQuestionsInt = Integer.parseInt(numberOfQuestions);
     
-            System.out.println("Chemin du fichier sélectionné : " + filePath);
-            System.out.println("Nombre de questions à générer : " + numberOfQuestionsInt);
+            Object[] options = {"Recto / Verso", "Recto -> Verso", "Verso -> Recto"};
+            int mode = JOptionPane.showOptionDialog(null, "Choisir le mode", "Mode", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+    
+            this.qc = new QuizController(filePath, numberOfQuestionsInt, mode);
         }
     }
-
+    
 }
