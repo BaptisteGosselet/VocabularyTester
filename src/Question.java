@@ -10,15 +10,8 @@ public class Question {
     
     public Question(Mot solution, Mot m2, Mot m3, Mot m4, int mode){
 
-        if(mode == 0){
-            this.mode = (int) (Math.random()-0.1 * ( 3 ));
-            System.out.println("Mode : "+mode);
-        }
-        else{
-            this.mode = mode;
-        }
-
-        this.mode = mode;
+        if(mode == 0) this.mode = (int)(Math.random() * 2 + 1);
+        else this.mode = mode;
 
         List<Mot> tempList = Arrays.asList(solution, m2, m3, m4);
         Collections.shuffle(tempList);
@@ -32,7 +25,7 @@ public class Question {
     }
 
     public String getQuestion(){
-        if(mode==1){
+        if(this.mode==1){
             return this.reponses[index_reponse].getRecto();
         }
         else{
@@ -41,7 +34,7 @@ public class Question {
     }
 
     public String getChoix(int i){
-        if(mode==1){
+        if(this.mode==1){
             return this.reponses[i].getVerso();
         }
         else{
