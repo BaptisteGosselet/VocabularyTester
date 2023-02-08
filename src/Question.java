@@ -11,7 +11,7 @@ public class Question {
     public Question(Mot solution, Mot m2, Mot m3, Mot m4, int mode){
 
         if(mode == 0){
-            this.mode = (int) (Math.random() * ( 2 - 1 ));
+            this.mode = (int) (Math.random()-0.1 * ( 3 ));
             System.out.println("Mode : "+mode);
         }
         else{
@@ -49,6 +49,13 @@ public class Question {
         }
     }
 
+    public int getIndexReponse(){
+        return this.index_reponse;
+    }
+
+    public String toString(){
+        return this.getQuestion();
+    }
 
 
 }

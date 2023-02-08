@@ -70,7 +70,10 @@ public class IGQuiz extends JFrame {
         resetButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println(((JButton) e.getSource()).getText());
+            if(qc != null){
+                qc.reinitQuestion();
+                clickOnButton(-1);
+            }
         }
         });
         c.add(resetButton);
@@ -91,11 +94,15 @@ public class IGQuiz extends JFrame {
 
     private void clickOnButton(int index) {
 
-        System.out.println(index);
-        for (JButton button : this.buttons) {
-            button.setEnabled(false);
-            button.setBackground(Color.GREEN);
+        int index_reponse = this.currentQuestion.getIndexReponse();
+        if(index == index_reponse) this.qc.addPts();
+
+        for(int i=0; i<this.buttons.length; i++){
+            buttons[i].setEnabled(false);
+            if(i == index_reponse) buttons[i].setBackground(Color.GREEN);
+            else buttons[i].setBackground(Color.RED);
         }
+
 
         new Timer(1500, new ActionListener() {
             @Override
@@ -142,9 +149,9 @@ public class IGQuiz extends JFrame {
             for(int i=0;i<buttons.length ;i++){
                 buttons[i].setText(currentQuestion.getChoix(i));
             }
-
             resetButton();
         }
+        scoreLabel.setText(qc.getScore());
     }
     
 }

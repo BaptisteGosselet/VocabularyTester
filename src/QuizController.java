@@ -47,6 +47,10 @@ public class QuizController {
             Collections.shuffle(copy);
             this.questions[i] = new Question(copy.get(0),copy.get(1),copy.get(2),copy.get(3), mode);
         }
+
+        for(int i=0;i<this.questions.length;i++){
+            System.out.println(this.questions[i]);
+        }
     }
 
     public void reinitQuestion(){
@@ -62,7 +66,18 @@ public class QuizController {
         }
         return q;
     }
+
+    public String getScore(){
+        return pts + "/" + (questions.length);
+    }
     
+    public void addPts(){
+        pts++;
+    }
+    
+    public void addCpt(){
+        cpt++;
+    }
 
     
 }
