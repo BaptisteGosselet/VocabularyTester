@@ -15,6 +15,8 @@ public class IGQuiz extends JFrame {
     private JButton newTestButton = new JButton("Nouveau Test");
     private JButton resetButton = new JButton("Recommencer");
     private JLabel scoreLabel = new JLabel();
+
+    private Question currentQuestion; 
     
     ButtonGroup modeGroup;
     ButtonGroup formatGroup;
@@ -44,8 +46,9 @@ public class IGQuiz extends JFrame {
     
         // Boutons
         for (int i = 0; i < 4; i++) {
-            buttons[i] = new JButton("Réponse " + (i + 1));
+            buttons[i] = new JButton();
             buttons[i].setFont(new Font("MS Mincho", Font.PLAIN, 18));
+            buttons[i].setEnabled(false);
             buttonPanel.add(buttons[i]);
         }
 
@@ -87,6 +90,7 @@ public class IGQuiz extends JFrame {
     }
 
     private void clickOnButton(int index) {
+
         System.out.println(index);
         for (JButton button : this.buttons) {
             button.setEnabled(false);
@@ -96,7 +100,7 @@ public class IGQuiz extends JFrame {
         new Timer(1500, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                resetButton();
+                nextQuestion();
                 ((Timer) e.getSource()).stop();
             }
         }).start();
@@ -110,6 +114,7 @@ public class IGQuiz extends JFrame {
     }
 
     private void newTest() {
+        this.qc = new QuizController();
         JFileChooser fileChooser = new JFileChooser("./quiz");
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
         fileChooser.setFileFilter(new FileNameExtensionFilter("Text files", "txt"));
@@ -117,14 +122,28 @@ public class IGQuiz extends JFrame {
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             File selectedFile = fileChooser.getSelectedFile();
             String filePath = selectedFile.getAbsolutePath();
-    
+            int number_of_words = qc.readFile(filePath);
+
             String numberOfQuestions = JOptionPane.showInputDialog("Nombre de questions à générer : ");
             int numberOfQuestionsInt = Integer.parseInt(numberOfQuestions);
     
             Object[] options = {"Recto / Verso", "Recto -> Verso", "Verso -> Recto"};
             int mode = JOptionPane.showOptionDialog(null, "Choisir le mode", "Mode", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
     
-            this.qc = new QuizController(filePath, numberOfQuestionsInt, mode);
+            qc.genererQuestion(numberOfQuestionsInt, mode);
+            nextQuestion();
+        }
+    }
+
+    private void nextQuestion(){
+        this.currentQuestion = this.qc.next();        
+        if(this.currentQuestion != null){
+            this.letterLabel.setText(currentQuestion.getQuestion());
+            for(int i=0;i<buttons.length ;i++){
+                buttons[i].setText(currentQuestion.getChoix(i));
+            }
+
+            resetButton();
         }
     }
     
