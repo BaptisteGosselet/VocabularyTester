@@ -1,0 +1,17 @@
+être (description)#だ
+être (présence)#ある/いる
+faire#する
+aller#行く (いく)
+regarder#見る (みる)
+parler#話す (はなす)
+manger#食べる (たべう)
+boire#飲む (のむ)
+dormir#寝る (ねる)
+entendre#聞く (きく)
+écrire#書く (かく)
+lire#読む (よむ)
+marcher#歩く (あるく)
+savoir#知る (しる)
+comprendre#分かる (わかる)
+penser#思う (おもう)
+dire#言う (いう)
