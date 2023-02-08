@@ -1,0 +1,10 @@
+Hello#Bonjour
+Goodbye#Au revoir
+Yes#Oui
+No#Non
+Please#S'il vous plaît
+Thank you#Merci
+Sorry#Désolé
+Excuse me#Excusez-moi
+How are you?#Comment allez-vous ?
+What is your name?#Comment vous appelez-vous ?
