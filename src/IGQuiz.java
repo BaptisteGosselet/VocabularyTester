@@ -2,32 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 public class IGQuiz extends JFrame {
-
-    private void clickOnButton(int index) {
-        System.out.println(index);
-        for (JButton button : this.buttons) {
-            button.setEnabled(false);
-            button.setBackground(Color.GREEN);
-        }
-
-        new Timer(1500, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                resetButton();
-                ((Timer) e.getSource()).stop();
-            }
-        }).start();
-    }
-    
-    private void resetButton() {
-        for (JButton button : this.buttons) {
-            button.setEnabled(true);
-            button.setBackground(null);
-        }
-    }
-
     
     JLabel letterLabel =new JLabel();
     JButton[] buttons = new JButton[4];
@@ -50,7 +27,7 @@ public class IGQuiz extends JFrame {
         Container c=getContentPane();
                 
         // Label
-        letterLabel.setText("Vocabulaire");
+        letterLabel.setText("Vocabulary Tester");
         letterLabel.setFont(new Font("MS Gothic", Font.BOLD, 56));
         letterLabel.setHorizontalAlignment(JLabel.CENTER);
         letterLabel.setVerticalAlignment(JLabel.CENTER);
@@ -77,7 +54,7 @@ public class IGQuiz extends JFrame {
         newTestButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println(((JButton) e.getSource()).getText());
+            newTest();
         }
         });
         c.add(newTestButton);
@@ -103,6 +80,45 @@ public class IGQuiz extends JFrame {
 
         this.setVisible(true);
     
+    }
+
+    private void clickOnButton(int index) {
+        System.out.println(index);
+        for (JButton button : this.buttons) {
+            button.setEnabled(false);
+            button.setBackground(Color.GREEN);
+        }
+
+        new Timer(1500, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                resetButton();
+                ((Timer) e.getSource()).stop();
+            }
+        }).start();
+    }
+    
+    private void resetButton() {
+        for (JButton button : this.buttons) {
+            button.setEnabled(true);
+            button.setBackground(null);
+        }
+    }
+
+    private void newTest() {
+        JFileChooser fileChooser = new JFileChooser("./quiz");
+        fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        int returnValue = fileChooser.showOpenDialog(null);
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            String filePath = selectedFile.getAbsolutePath();
+    
+            String numberOfQuestions = JOptionPane.showInputDialog("Nombre de questions à générer : ");
+            int numberOfQuestionsInt = Integer.parseInt(numberOfQuestions);
+    
+            System.out.println("Chemin du fichier sélectionné : " + filePath);
+            System.out.println("Nombre de questions à générer : " + numberOfQuestionsInt);
+        }
     }
 
 }
