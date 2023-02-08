@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,8 +29,8 @@ public class IGQuiz extends JFrame {
         Container c=getContentPane();
                 
         // Label
-        letterLabel.setText("Vocabulary Tester");
-        letterLabel.setFont(new Font("MS Gothic", Font.BOLD, 56));
+        letterLabel.setText("V. Tester");
+        letterLabel.setFont(new Font("MS Gothic", Font.BOLD, 40));
         letterLabel.setHorizontalAlignment(JLabel.CENTER);
         letterLabel.setVerticalAlignment(JLabel.CENTER);
         c.add(letterLabel);
@@ -108,6 +110,7 @@ public class IGQuiz extends JFrame {
     private void newTest() {
         JFileChooser fileChooser = new JFileChooser("./quiz");
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        fileChooser.setFileFilter(new FileNameExtensionFilter("Text files", "txt"));
         int returnValue = fileChooser.showOpenDialog(null);
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             File selectedFile = fileChooser.getSelectedFile();
