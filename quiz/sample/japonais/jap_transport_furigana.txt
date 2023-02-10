@@ -1,0 +1,30 @@
+Automobile#自動車 (ジドウシャ)
+Voiture#車 (くるま)
+Bicyclette#自転車 (ジテンシャ)
+Fourgon d'incendie#消防車 (ショウボウシャ)
+Ambulance#救急車 (キュウキュウシャ)
+Secours d'urgence#救急 (キュウキュウ)
+Véhicule de police#パトロールカー / パトカー
+Moto#オートバイ / バイク
+Scooter#スクーター
+Taxi#タクシー 
+Bus#バス
+Train#列車 (レッシャ)
+Train électrique#電車 (デンシャ)
+Tramway#路面電車 (ロメンデンシャ)
+Métro#地下鉄 (チカテツ)
+Métro#メトロ
+Camion (en)#トラック
+Camion (jp)#貨物自動車 (カモツジドウシャ)
+Cargaison#貨物 (カモツ)
+Bateau#船 (ふね)
+Cargo#貨物船 (カモツセン)
+Sous-marin#潜水艦 (センスイカン)
+Plongée#潜水 (センスイ)
+Avion#飛行機 (ヒコウキ)
+Hélicoptère#ヘリコプター
+Montgolfière#熱気球 (ネツキキュウ)
+Téléphérique#索道 (サクドウ)
+Navette spatiale#オービタ
+Vaisseau spatial#宇宙船 (ウチュウセン)
+Univers#宇宙 (ウチュウ)

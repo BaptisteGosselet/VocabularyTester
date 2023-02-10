@@ -1,0 +1,31 @@
+Mairie#市役所 (しやくしょ)
+École#学校 (がっこう)
+Hôpital#病院 (びょういん)
+Pharmacie#薬局 (やっきょく)
+Bureau de poste#郵便局 (ゆうびんきょく)
+Banque#銀行 (ぎんこう)
+Commissariat de police#警察署 (けさつしょ)
+Poste de police#交番  (こうばん)
+Théâtre#劇場 (げきじょう)
+Cinéma#映画館 (えがかん)
+Police#警察 (けさつ)
+Film#映画 (えが)
+Bibliothèque#図書館 (としょかん)
+Musée#美術館 (びじゅつかん)
+Les beaux-arts#美術 (びじゅつ)
+Les livres#図書 (としょ)
+Parc#公園 (こうえん)
+Zoo#動物園 (どうぶつえん)
+Les animaux#動物 (どうぶつ)
+Temple (bouddhiste)#寺 (てら)
+Temple (shintoïste)#神社 (じんじゃ)
+Église#教会 (きょうかい)
+Magasin#店 (みせ)
+Supérette#コンビニ
+Supermarché#スーパーマーケット
+Restaurant#レストラン
+Hôtel#ホテル
+Stade#スタジアム
+Gare#駅 (えき)
+Port#港 (みなと)
+Aéroport#空港 (くうこう)

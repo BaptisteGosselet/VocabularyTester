@@ -1,0 +1,30 @@
+Chemise#シャツ
+T-shirt#Tシャツ
+Pull-over#セーター
+Veste#ジャケット
+Pantalon#ズボン
+Jeans#ジーンズ
+Ceinture#ベルト
+Chaussure (classique)#靴 (くつ)
+Chaussure de sport#運動靴 (うんどうぐつ)
+Sneaker#スニーカー
+Chaussette#靴下 (くつした)
+Collants#タイツ
+Slip#ブリーフ
+Caleçon#トランクス
+Culotte#パンティー
+Short-culotte#ブルマー
+Soutien-gorge#ブラジャー
+Jupe#スカート
+Mini-jupe#ミニスカート
+Robe#ドレス
+Survêtement#トレーニングウェア
+Long manteau (jp)#外套 (ガイト)
+Manteau (en)#コート
+Chapeau#帽子 (ボウシ)
+Casquette#キャップ
+Gant#手袋 (てぶくろ)
+Echarpe (jp)#襟巻き(えりまき)
+Echarpe (en)#マフラー
+Cravate#ネクタイ
+Nœud papillon#ボウタイ

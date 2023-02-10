@@ -1,0 +1,31 @@
+Mairie#市役所
+École#学校
+Hôpital#病院
+Pharmacie#薬局
+Bureau de poste#郵便局
+Banque#銀行
+Commissariat de police#警察署
+Poste de police#交番
+Théâtre#劇場
+Cinéma#映画館
+Police#警察
+Film#映画
+Bibliothèque#図書館
+Musée#美術館
+Les beaux-arts#美術
+Les livres#図書
+Parc#公園
+Zoo#動物園
+Les animaux#動物
+Temple (bouddhiste)#寺
+Temple (shintoïste)#神社
+Église#教会
+Magasin#店
+Supérette#コンビニ
+Supermarché#スーパーマーケット
+Restaurant#レストラン
+Hôtel#ホテル
+Stade#スタジアム
+Gare#駅
+Port#港
+Aéroport#空港
