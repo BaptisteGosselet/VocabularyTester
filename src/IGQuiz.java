@@ -121,12 +121,12 @@ public class IGQuiz extends JFrame {
     }
 
     private void newTest() {
-        this.qc = new QuizController();
         JFileChooser fileChooser = new JFileChooser("./quiz");
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
         fileChooser.setFileFilter(new FileNameExtensionFilter("Text files", "txt"));
         int returnValue = fileChooser.showOpenDialog(null);
         if (returnValue == JFileChooser.APPROVE_OPTION) {
+            this.qc = new QuizController();
             File selectedFile = fileChooser.getSelectedFile();
             String filePath = selectedFile.getAbsolutePath();
             int number_of_words = qc.readFile(filePath);
