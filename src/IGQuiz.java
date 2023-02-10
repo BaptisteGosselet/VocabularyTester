@@ -47,7 +47,7 @@ public class IGQuiz extends JFrame {
         // Boutons
         for (int i = 0; i < 4; i++) {
             buttons[i] = new JButton();
-            buttons[i].setFont(new Font("MS Mincho", Font.PLAIN, 23));
+            buttons[i].setFont(new Font("MS Mincho", Font.PLAIN, 17));
             buttons[i].setEnabled(false);
             buttonPanel.add(buttons[i]);
         }
